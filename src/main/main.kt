@@ -123,7 +123,7 @@ fun main (args: Array<String>){
                                         it.ocupar()
                                         it.placa=placa
                                     }
-                                    it.initMapa()
+                                    //it.initMapa()
                                 }
                             }else{
                                 listaNiveles.forEach{
@@ -140,11 +140,6 @@ fun main (args: Array<String>){
                                     println("Su carro está en este parqueo: \n${it.imprimir()}")
                                 }
                             }
-
-
-
-
-
                         }
                         "2" ->{
                             control3 = false

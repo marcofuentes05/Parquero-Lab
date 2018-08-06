@@ -12,6 +12,7 @@ class Nivel(var nombre:String , var ubicacion: String, var id: String, var color
 
 
     fun initMapa() {
+
         try {
             File(ubicacion).forEachLine { mapa.add(it) }
         } catch (e: Exception) {}
@@ -31,8 +32,21 @@ class Nivel(var nombre:String , var ubicacion: String, var id: String, var color
             }
         }
     }
-    fun actualizarMapa(){
 
+    fun actualizarMapa(){
+        for(a in 0..mapa.size-1){
+            var lista : List<String> = mapa.get(a).split("")
+            for(b in 0..lista.size-1){
+                if (lista.get(b) in elementosEspeciales){
+                    when(parqueos.filter{it.x.equals(b) && it.y.equals(a)}.get(0).ocupado){
+                        true ->{
+                            //lista.get(b) = "@"
+                        }
+                        else -> {}
+                    }
+                }
+            }
+        }
     }
 
     fun imprimir():String{
